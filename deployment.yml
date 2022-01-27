@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-deployment
   labels:
-    app: my-capstone-deployment
+    app: my-deployment
   namespace: default
 spec:
   progressDeadlineSeconds: 3600
