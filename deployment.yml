@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-capstone-deployment
+  name: my-deployment
   labels:
     app: my-capstone-deployment
   namespace: default
@@ -10,7 +10,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-capstone-deployment
+      app: my-deployment
   strategy:
     rollingUpdate:
       #maxSurge: 25%
@@ -19,12 +19,12 @@ spec:
   template:
     metadata:
       labels:
-        app: my-capstone-deployment
+        app: my-deployment
     spec:
       containers:
         - image: deepikakhannarbs/my-node-app:1.0
           imagePullPolicy: Always
-          name: my-capstone-deployment
+          name: my-deployment
           ports:
             - containerPort: 8080
 
@@ -32,13 +32,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-capstone-deployment
+  name: my-deployment
   labels:
-    app: my-capstone-deployment
+    app: my-deployment
 spec:
   type: LoadBalancer
   selector:
-    app: my-capstone-deployment
+    app: my-deployment
   ports:
     - port: 8080
       targetPort: 8080
