@@ -31,10 +31,8 @@ jobs:
               echo "Node js failed"
             fi
 workflows:
-    default:
-      jobs:
-        - lint
-        - smoke_test:
-            requires:
-              - lint
-      - say-hello
+  default:
+    jobs:
+      - lint
+      - smoke_test:
+          requires: [lint]
