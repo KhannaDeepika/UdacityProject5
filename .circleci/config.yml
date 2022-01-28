@@ -156,7 +156,7 @@ jobs:
 
 
 workflows:
-  udacity:
+  default:
     jobs:
       - lint
       - smoke_test:
@@ -164,6 +164,7 @@ workflows:
       - config-image:
           requires:
             [smoke_test]
+          context: Udacity  
       - create-cluster:
           cluster-name: udacity-p5
           requires:
