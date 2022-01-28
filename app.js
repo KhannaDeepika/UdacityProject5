@@ -3,4 +3,4 @@ const app = express();
 app.get('/', (req, res) => {
 res.send("NodeJS app");
 });
-app.listen(8080,'localhost');
+app.listen(8080);
