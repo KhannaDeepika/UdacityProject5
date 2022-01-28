@@ -57,7 +57,7 @@ jobs:
             export response=$(curl -s $url)
             echo "This is response $response"
             if [[ $response == *"NodeJS app"* ]]; then              
-              docker stop nodeapp
+             docker stop nodeapp
             else              
               docker stop nodeapp
               exit 1
@@ -161,6 +161,7 @@ workflows:
       - lint
       - smoke_test:
           requires: [lint]
+          context: Udacity
       - config-image:
           requires:
             [smoke_test]
@@ -169,18 +170,22 @@ workflows:
           cluster-name: udacity-p5
           requires:
             [config-image]
+          context: Udacity   
       - test-cluster:
           cluster-name: udacity-p5
           requires:
             [create-cluster]
+          context: Udacity   
       - create-deployment:
           cluster-name: udacity-p5
           requires:
             [test-cluster]
+          context: Udacity   
       - test-deployment:
           cluster-name: udacity-p5
           requires:
-            [create-deployment]              
+            [create-deployment]
+          context: Udacity                 
       - aws-eks/update-container-image:
           cluster-name: udacity-p5
           container-image-updates: 'my-deployment=deepikakhannarbs/my-node-app:2.0'
@@ -189,3 +194,4 @@ workflows:
           requires:
              [test-deployment]
           resource-name:  deployment/my-deployment
+          context: Udacity
