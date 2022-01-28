@@ -6,15 +6,12 @@ metadata:
     app: my-deployment
   namespace: default
 spec:
-  progressDeadlineSeconds: 3600
+  progressDeadlineSeconds: 6000
   replicas: 1
   selector:
     matchLabels:
       app: my-deployment
   strategy:
-    rollingUpdate:
-      #maxSurge: 25%
-      maxUnavailable: 1
     type: RollingUpdate
   template:
     metadata:
@@ -22,7 +19,7 @@ spec:
         app: my-deployment
     spec:
       containers:
-        - image: deepikakhannarbs/my-node-app:1.0
+        - image: deepikakhannarbs/my-node-app:2.0
           imagePullPolicy: Always
           name: my-deployment
           ports:
