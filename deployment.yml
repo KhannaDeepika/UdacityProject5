@@ -6,15 +6,12 @@ metadata:
     app: my-deployment
   namespace: default
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: my-deployment
   strategy:
     type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 0
-      maxSurge: 1
   template:
     metadata:
       labels:
