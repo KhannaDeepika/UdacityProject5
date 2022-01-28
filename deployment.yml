@@ -12,9 +12,9 @@ spec:
     matchLabels:
       app: my-deployment
   strategy:
-  type: RollingUpdate
-  rollingUpdate:
-    maxUnavailable: 1
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
     
   template:
     metadata:
