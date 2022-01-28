@@ -167,22 +167,22 @@ workflows:
             [smoke_test]
           context: Udacity  
       - create-cluster:
-          cluster-name: udacity-p5
+          cluster-name: udacity-proj5
           requires:
             [config-image]
           context: Udacity   
       - test-cluster:
-          cluster-name: udacity-p5
+          cluster-name: udacity-proj5
           requires:
             [create-cluster]
           context: Udacity   
       - create-deployment:
-          cluster-name: udacity-p5
+          cluster-name: udacity-proj5
           requires:
             [test-cluster]
           context: Udacity   
       - test-deployment:
-          cluster-name: udacity-p5
+          cluster-name: udacity-proj5
           requires:
             [create-deployment]
           context: Udacity                 
