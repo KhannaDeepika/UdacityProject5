@@ -12,10 +12,10 @@ spec:
     matchLabels:
       app: my-deployment
   strategy:
-    rollingUpdate:
-      #maxSurge: 25%
-      maxUnavailable: 1
-    type: RollingUpdate
+  type: RollingUpdate
+  rollingUpdate:
+    maxUnavailable: 1
+    
   template:
     metadata:
       labels:
