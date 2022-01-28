@@ -33,6 +33,9 @@ jobs:
           get-rollout-status: true
           resource-file-path: deployment.yml
           resource-name: deployment/my-deployment
+      - run:
+          command: | 
+            kubectl get events --all-namespaces
           
   test-deployment:
     executor: aws-eks/python3
