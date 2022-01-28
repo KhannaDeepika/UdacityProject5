@@ -35,7 +35,7 @@ jobs:
               echo "Node js failed"
             fi
 workflows:
-  default:
+  udacity:
     jobs:
       - lint
       - smoke_test:
