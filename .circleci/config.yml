@@ -22,6 +22,10 @@ jobs:
       - image :  alpine:latest
     steps:
       - run:
+          name: Install dependencies
+          command: |
+            apk add --update tar gzip curl
+      - run:
           name: Smoke Tests
           command: |
             if curl -s --head "http://localhost:8080" 
