@@ -6,7 +6,7 @@ metadata:
     app: my-deployment
   namespace: default
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: my-deployment
@@ -18,7 +18,7 @@ spec:
         app: my-deployment
     spec:
       containers:
-        - image: deepikakhannarbs/my-node-app:1.0
+        - image: deepikakhannarbs/my-node-app:2.0
           imagePullPolicy: Always
           name: my-deployment
           ports:
