@@ -15,17 +15,17 @@ spec:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
-    template:
-      metadata:
-        labels:
-          app: my-deployment
-      spec:
-        containers:
-          - image: deepikakhannarbs/my-node-app:1.0
-            imagePullPolicy: Always
-            name: my-deployment
-            ports:
-              - containerPort: 8080
+  template:
+    metadata:
+      labels:
+        app: my-deployment
+    spec:
+      containers:
+        - image: deepikakhannarbs/my-node-app:1.0
+          imagePullPolicy: Always
+          name: my-deployment
+          ports:
+            - containerPort: 8080
 
 ---
 apiVersion: v1
