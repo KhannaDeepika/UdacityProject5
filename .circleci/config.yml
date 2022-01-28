@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Smoke Tests
           command: |
-            if curl -s --head "http://127.0.0.1:8080" 
+            if curl -s --head "http://localhost:8080" 
                 then
             echo "Node js working!"
             else
