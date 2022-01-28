@@ -6,7 +6,6 @@ metadata:
     app: my-deployment
   namespace: default
 spec:
-  progressDeadlineSeconds: 3600
   replicas: 1
   selector:
     matchLabels:
