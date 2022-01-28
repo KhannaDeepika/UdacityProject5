@@ -1,11 +1,6 @@
 const express = require('express');
 const app = express();
 app.get('/', (req, res) => {
-res.send(`
-<h1>NodeJS app!</h1>
-`);
-});
-app.get('/error', (req, res) => {
-process.exit(1);
+res.send("NodeJS app");
 });
 app.listen(8080);
