@@ -16,6 +16,7 @@ jobs:
           name: run lint
           command: |
             make lint
+            run lint
             
   smoke_test:
     docker : 
