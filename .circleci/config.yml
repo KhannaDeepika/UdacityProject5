@@ -167,27 +167,27 @@ workflows:
             [smoke_test]
           context: Udacity  
       - create-cluster:
-          cluster-name: udacity-p5
+          cluster-name: udacity-p5-2
           requires:
             [config-image]
           context: Udacity   
       - test-cluster:
-          cluster-name: udacity-p5
+          cluster-name: udacity-p5-2
           requires:
             [create-cluster]
           context: Udacity   
       - create-deployment:
-          cluster-name: udacity-p5
+          cluster-name: udacity-p5-2
           requires:
             [test-cluster]
           context: Udacity   
       - test-deployment:
-          cluster-name: udacity-p5
+          cluster-name: udacity-p5-2
           requires:
             [create-deployment]
           context: Udacity                 
       - aws-eks/update-container-image:
-          cluster-name: udacity-p5
+          cluster-name: udacity-p5-2
           container-image-updates: 'my-deployment=deepikakhannarbs/my-node-app:2.0'
           get-rollout-status: true
           record: true
