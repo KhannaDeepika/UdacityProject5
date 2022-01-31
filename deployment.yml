@@ -19,7 +19,7 @@ spec:
         app: my-deployment
     spec:
       containers:
-        - image: deepikakhannarbs/my-node-app:2.0
+        - image: deepikakhannarbs/my-node-app:3.0
           imagePullPolicy: Always
           name: my-deployment
           ports:
