@@ -2,4 +2,4 @@ Github URL:
 https://github.com/KhannaDeepika/UdacityProject5
 
 LoadBalancer URL:
-http://a061799c245d7495f87e86248b4d72b4-1153296911.us-west-2.elb.amazonaws.com:8080/
+http://aed6d896b50444179983e27069e6b755-2062851908.us-west-2.elb.amazonaws.com:8080/
